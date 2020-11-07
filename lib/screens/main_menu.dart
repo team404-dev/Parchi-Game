@@ -8,21 +8,23 @@ class MainMenu extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              GameTitle(),
-              MenuButton(text: 'Online Multiplayer', onPressed: () {}),
-              MenuButton(text: 'Vs CPU', onPressed: () {
-                Navigator.of(context).pushNamed('vsCpu');
-              }),
-              MenuButton(text: 'Create room', onPressed: () {}),
-              MenuButton(text: 'Join room', onPressed: () {}),
-              MenuButton(text: 'Instructions', onPressed: () {
-                Navigator.of(context).pushNamed('instructions');
-              }),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                GameTitle(),
+                MenuButton(text: 'Online Multiplayer', onPressed: () {}),
+                MenuButton(text: 'Vs CPU', onPressed: () {
+                  Navigator.of(context).pushNamed('vsCpu');
+                }),
+                MenuButton(text: 'Create room', onPressed: () {}),
+                MenuButton(text: 'Join room', onPressed: () {}),
+                MenuButton(text: 'Instructions', onPressed: () {
+                  Navigator.of(context).pushNamed('instructions');
+                }),
+              ],
+            ),
           ),
         ),
       ),
@@ -40,12 +42,13 @@ class MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(vertical: 1.0, horizontal: 10),
+      height: 50,
+      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10),
       child: RaisedButton(
         child: Text(
           text,
           style: TextStyle(
-              fontWeight: FontWeight.bold, letterSpacing: 1.5, fontSize: 18),
+              letterSpacing: 1.5, fontSize: 18),
         ),
         onPressed: onPressed,
         color: Color.fromRGBO(137, 44, 220, 1),

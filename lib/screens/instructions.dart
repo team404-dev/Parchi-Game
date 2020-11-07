@@ -54,11 +54,11 @@ class Instructions extends StatelessWidget {
                 ListTile(
                   contentPadding: EdgeInsets.all(0),
                   title: Text('Contact us!', style: TextStyle(color: Colors.white),),
-                  subtitle: GestureDetector(child: Text('team404@gmail.com', style: TextStyle(color: Theme.of(context).accentColor)),
+                  subtitle: GestureDetector(child: Text('team404dev@gmail.com', style: TextStyle(color: Theme.of(context).accentColor)),
                     onTap: () async{
                       final Uri _emailLaunchUri = Uri(
                           scheme: 'mailto',
-                          path: 'team404@gmail.com',
+                          path: 'team404dev@gmail.com',
                           queryParameters: {
                             'subject': 'Report a problem!'
                           }
@@ -66,7 +66,7 @@ class Instructions extends StatelessWidget {
                       if(await canLaunch(_emailLaunchUri.toString())) {
                         await launch(_emailLaunchUri.toString());
                       } else {
-                        print('Cannot not launch team404@gmail.com');
+                        print('Cannot not launch team404dev@gmail.com');
                       }
                     },
                   ),
